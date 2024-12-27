@@ -1,0 +1,38 @@
+# alias {{{
+[alias]
+    # basic {{{
+    st = status -s
+    br = branch
+    gr = grep -Ii
+    # }}}
+
+    # tweak defaults {{{
+    diff = diff --word-diff
+    grep = grep -Ii
+    bra = branch -rav
+
+    # log commands {{{
+    ls = log --color --pretty=format:"%C(green)%h%Creset\\ %C(yellow)[%><(12)%ad%><|(12)]%Creset\\ %C(blue)[%an]%Creset\\ %C(red)%d%Creset\\ %s" --decorate --date=format:'%a %d/%m/%Y'
+    ll = log --pretty=format:"%C(green)%h\\ %C(yellow)[%p]\\ %Cred%d\\ %Creset%s%Cblue\\ [a:%an,c:%cn]" --decorate --stat
+    # }}}
+
+     # diff last commit
+    dl = "!git ll -1"
+    dlc = diff --cached HEAD^
+    dr  = "!f() { git diff -w "$1"^.."$1"; }; f"
+    diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+    # }}}
+ 
+    # various useful {{{
+    # last tag created
+    lasttag = describe --tags --abbrev=0
+
+    # list all aliases
+    la = "!git config -l | grep alias | cut -c 7-"
+    # }}}
+
+    today = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
+    delete-merged = !git branch --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" { print $1 }' | xargs -r git branch -D
+    sync = !git switch `git remote show origin | sed -n '/HEAD branch/s/.*: //p'` && git pull --prune && git delete-merged
+    lol = log --graph --decorate --pretty='format:%C(yellow)%h%Cgreen%d%Creset %s %C(white) (%an, %ar)%Creset' --abbrev-commit
+# }}}

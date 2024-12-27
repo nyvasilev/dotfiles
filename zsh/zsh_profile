@@ -1,0 +1,39 @@
+# paths
+export DOTFILES="$HOME/.dotfiles"
+export PATH="/opt/homebrew/bin:$PATH:/usr/local/bin:$DOTFILES/utils/tmux-sessionazer/"
+
+# bat
+export BAT_CONFIG_DIR="$DOTFILES/utils/bat"
+export BAT_THEME="gruvbox-dark"
+
+# yazi
+export YAZI_CONFIG_DIR="$DOTFILES/yazi"
+export YA_PACK_THEMES_DIR="$DOTFILES/yazi/themes"
+export YA_PACK_PLUGINS_DIR="$DOTFILES/yazi/plugins"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion"
+
+# aliases
+alias vim="nvim"
+alias tat="tmux attach-session"
+alias cat="bat"
+alias ff='vim $(fzf --preview="bat --color=always {}")'
+
+# eza (better `ls`)
+alias ls="eza --icons"
+alias ll="eza -lg --icons"
+alias la="eza -lag --icons"
+alias lah="eza -lah --icons"
+alias lt="eza -lTg --icons"
+alias lt1="eza -lTg --level=1 --icons"
+alias lt2="eza -lTg --level=2 --icons"
+alias lt3="eza -lTg --level=3 --icons"
+alias lta="eza -lTag --icons"
+alias lta1="eza -lTag --level=1 --icons"
+alias lta2="eza -lTag --level=2 --icons"
+alias lta3="eza -lTag --level=3 --icons"
+
+bindkey -s '^f' "tmux-sessionizer\n"
+
