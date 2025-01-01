@@ -1,3 +1,0 @@
-[include]
-	path = ~/.dotfiles/git-config/gitconfig-init
-    path = ~/.dotfiles/git-config/git-personal-private

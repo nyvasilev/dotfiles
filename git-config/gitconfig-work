@@ -1,6 +1,0 @@
-[include]
-    path = ~/.dotfiles/git-config/gitconfig-init
-    path = ~/.dotfiles/git-config/git-work-private
-
-[commit]
-	template = ~/.dotfiles/git-config/stCommitMsg

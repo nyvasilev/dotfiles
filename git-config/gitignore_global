@@ -1,11 +1,2 @@
 .DS_Store
 .vscode
-
-# git
-.git-credentials
-git-work-private
-git-personal-private
-
-# zsh
-zsh/oh-my-zsh
-zsh/.zsh_history

@@ -27,7 +27,7 @@ set("n", "Q", "<nop")
 set("n", "<C-f>", "<cmd>silent !tmux neww tmuxsessionizer<CR>")
 
 set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-set("n", "<leader>x", "<cmd>!chmod +x %<CR>", opts)
+-- set("n", "<leader>x", "<cmd>!chmod +x %<CR>", opts)
 
 -- Increment/decrement
 set("n", "+", "<C-a>")
@@ -38,9 +38,9 @@ set("n", "<leader>j", "<cmd>lnext<CR>zz")
 set("n", "<leader>k", "<cmd>lprev<CR>zz")
 
 -- plugins
-
 -- neo tree
 set("n", "<C-n>", ":Neotree toggle<CR>", opts)
 
 -- figutive
 set("n", "<C-g>s", ":below Git status<CR>")
+set("n", "<C-g>bl", ":below Git blame<CR>")

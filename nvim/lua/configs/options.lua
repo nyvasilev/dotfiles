@@ -49,8 +49,6 @@ opt.signcolumn = "auto:2"
 opt.synmaxcol = 512
 opt.list = true
 
-opt.foldmethod = "expr" -- Use Tree-sitter or another expression for folds
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.foldenable = true -- Start with folds enabled
-opt.foldlevel = 99 -- Open all folds by default
+opt.foldenable = true
+opt.foldlevel = 99
 opt.foldcolumn = "1"

@@ -1,16 +1,16 @@
 [include]
-	path = ~/.dotfiles/git-config/gitconfig.aliases
+    path = ~/.dotfiles/git-config/gitconfig.aliases
     path = ~/.dotfiles/git-config/themes.gitconfig
 
 [core]
-	editor = nvim
-	excludesfile = ~/.dotfiles/git-config/gitignore_global
-	ignorecase = false
-	filemode = true
-	repositoryformatversion = 0
-	bare = false
-	logallrefupdates = true
-	precomposeunicode = true
+    editor = nvim
+    excludesfile = ~/.dotfiles/git-config/gitignore_global
+    ignorecase = false
+    filemode = true
+    jrepositoryformatversion = 0
+    bare = false
+    logallrefupdates = true
+    precomposeunicode = true
     pager = delta
 
 [interactive]
@@ -23,10 +23,10 @@
     features = gruvmax-fang
 
 [credential]
-	helper = store
+    helper = store
 
 [pull]
-	ff = only
+    ff = only
 
 [blame]
-	coloring = highlightRecent 
+    coloring = highlightRecent 
