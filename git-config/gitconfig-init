@@ -28,11 +28,3 @@
     tabs = 4
     dark = true
     syntax-theme = gruvbox-dark
-
-
-    # minus-style = syntax "#db634b"
-    # minus-emph-style = syntax "#db634b"
-    # minus-non-emph-style = syntax auto
-    # plus-style = syntax "#81b88b"
-    # plus-emph-style = syntax "#81b88b"
-    # plus-non-emph-style = syntax auto
