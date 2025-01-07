@@ -1,7 +1,7 @@
-[include]
-    path = ~/.dotfiles/git-config/gitconfig.aliases
-    path = ~/.dotfiles/git-config/themes.gitconfig
-
+[init]
+	defaultBranch = main
+[credential]
+    helper = store
 [core]
     editor = nvim
     excludesfile = ~/.dotfiles/git-config/gitignore_global
@@ -12,21 +12,27 @@
     logallrefupdates = true
     precomposeunicode = true
     pager = delta
-
 [interactive]
     diffFilter = delta --color-only
-
-[delta]
-    navigate = true
-    dark = true
-    line-numbers = true
-    features = gruvmax-fang
-
-[credential]
-    helper = store
-
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
 [pull]
     ff = only
+[delta]
+    navigate = true
+    line-numbers = true
+    features = ''
+    paging = always
+    tabs = 4
+    dark = true
+    syntax-theme = gruvbox-dark
 
-[blame]
-    coloring = highlightRecent 
+
+    # minus-style = syntax "#db634b"
+    # minus-emph-style = syntax "#db634b"
+    # minus-non-emph-style = syntax auto
+    # plus-style = syntax "#81b88b"
+    # plus-emph-style = syntax "#81b88b"
+    # plus-non-emph-style = syntax auto

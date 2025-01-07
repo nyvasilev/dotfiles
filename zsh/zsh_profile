@@ -15,7 +15,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion"
 
-# aliases
+# General aliases
 alias vim="nvim"
 alias tat="tmux attach-session"
 alias cat="bat"
@@ -34,6 +34,20 @@ alias lta="eza -lTag --icons"
 alias lta1="eza -lTag --level=1 --icons"
 alias lta2="eza -lTag --level=2 --icons"
 alias lta3="eza -lTag --level=3 --icons"
+
+# Git
+alias gbra="git branch -rav"
+alias gll='git log --pretty=format:"%C(green)%h\\ %C(yellow)[%p]\\ %Cred%d\\ %Creset%s%Cblue\\ [a:%an,c:%cn]" --decorate --stat'
+alias glasttag="git describe --tags --abbrev=0"
+alias gtoday="git log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative"
+alias gdelete-merged="git branch --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" { print $1 }' | xargs -r git branch -D"
+alias gsync="git switch `git remote show origin | sed -n '/HEAD branch/s/.*: //p'` && git pull --prune && gdelete-merged"
+alias glol="git log --graph --decorate --pretty='format:%C(yellow)%h%Cgreen%d%Creset %s %C(white) (%an, %ar)%Creset' --abbrev-commit"
+alias gdd="DELTA_FEATURES=+side-by-side git diff"
+alias gdds="DELTA_FEATURES=+side-by-side git diff --staged"
+alias gbd="git diff --name-only --diff-filter=d | xargs bat --paging=always --diff"
+alias gbds="git diff --staged | bat --paging=always --style=changes,header,grid,snip"
+alias gs="git status -s -b"
 
 bindkey -s '^f' "tmux-sessionizer\n"
 
