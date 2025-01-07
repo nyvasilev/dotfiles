@@ -53,6 +53,7 @@ return {
 			lspconfig["cssls"].setup({ capabilities = capabilities })
 			lspconfig["eslint"].setup({ capabilities = capabilities })
 			lspconfig["jsonls"].setup({ capabilities = capabilities })
+			lspconfig["emmet_ls"].setup({ capabilities = capabilities })
 
 			vim.keymap.set("n", "grn", require("vim.lsp.buf").rename)
 			vim.keymap.set("v", "gra", require("vim.lsp.buf").code_action)
