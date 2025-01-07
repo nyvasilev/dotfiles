@@ -2,6 +2,8 @@
 export DOTFILES="$HOME/.dotfiles"
 export PATH="/opt/homebrew/bin:$PATH:/usr/local/bin:$DOTFILES/utils/tmux-sessionazer/"
 
+export PAGER=delta
+
 # bat
 export BAT_CONFIG_DIR="$DOTFILES/utils/bat"
 export BAT_THEME="gruvbox-dark"
@@ -37,6 +39,7 @@ alias lta3="eza -lTag --level=3 --icons"
 
 # Git
 alias gbra="git branch -rav"
+alias gls="git log --color --pretty=format:'%C(green)%h%Creset %C(yellow)[%><(12)%ad%><|(12)]%Creset %C(blue)[%an]%Creset %C(red)%d%Creset %s' --decorate --date=format:'%a %d/%m/%Y'"
 alias gll='git log --pretty=format:"%C(green)%h\\ %C(yellow)[%p]\\ %Cred%d\\ %Creset%s%Cblue\\ [a:%an,c:%cn]" --decorate --stat'
 alias glasttag="git describe --tags --abbrev=0"
 alias gtoday="git log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative"
