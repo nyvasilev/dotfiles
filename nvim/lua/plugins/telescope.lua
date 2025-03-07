@@ -11,16 +11,19 @@ return {
 
 			-- Key mappings for Telescope functions
 			vim.keymap.set("n", "<space>fg", require("custom.telescope.multigrep"))
-			vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+			vim.keymap.set("n", "<leader>p", builtin.find_files, {})
 			vim.keymap.set("n", "<C-g>f", builtin.git_files, {})
-			vim.keymap.set("n", "<C-l>", builtin.live_grep, {})
+			vim.keymap.set("n", "<leader>l", builtin.live_grep, {})
 			vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
-			vim.keymap.set("n", "<C-\\>", builtin.buffers, {})
+			vim.keymap.set("n", "<leader>b", builtin.buffers, {})
 			vim.keymap.set("n", "<leader>pd", builtin.diagnostics, {})
 			vim.keymap.set("n", "gri", builtin.lsp_implementations, {})
+			vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Goto Definition" })
 			vim.keymap.set("n", "grr", builtin.lsp_references, {})
 			vim.keymap.set("n", "<C-g>c", builtin.git_commits, {})
 			vim.keymap.set("n", "<C-g>bc", builtin.git_bcommits, {})
+			vim.keymap.set("v", "<leader>s", builtin.spell_suggest, {})
+			vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
 			vim.keymap.set("n", "<space>en", function()
 				builtin.find_files({
 					cwd = vim.fn.stdpath("config"),

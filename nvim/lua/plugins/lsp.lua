@@ -12,7 +12,7 @@ return {
 		opts = { auto_install = true },
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "html", "cssls", "eslint", "ts_ls", "jsonls" },
+				ensure_installed = { "lua_ls", "html", "cssls", "eslint", "ts_ls", "jsonls", "svelte" },
 			})
 		end,
 	},
@@ -22,7 +22,6 @@ return {
 			{ "saghen/blink.cmp" },
 			{
 				"folke/lazydev.nvim",
-				ft = "lua", -- only load on lua files
 				opts = {
 					library = {
 						-- See the configuration section for more details
@@ -40,6 +39,7 @@ return {
 				eslint = {},
 				ts_ls = {},
 				jsonls = {},
+				svelte = {},
 			},
 		},
 		config = function()
@@ -47,13 +47,13 @@ return {
 			local lspconfig = require("lspconfig")
 
 			lspconfig["lua_ls"].setup({ capabilities = capabilities })
-			lspconfig["lua_ls"].setup({ capabilities = capabilities })
 			lspconfig["ts_ls"].setup({ capabilities = capabilities })
 			lspconfig["html"].setup({ capabilities = capabilities })
 			lspconfig["cssls"].setup({ capabilities = capabilities })
 			lspconfig["eslint"].setup({ capabilities = capabilities })
 			lspconfig["jsonls"].setup({ capabilities = capabilities })
 			lspconfig["emmet_ls"].setup({ capabilities = capabilities })
+			lspconfig["svelte"].setup({ capabilities = capabilities })
 
 			vim.keymap.set("n", "grn", require("vim.lsp.buf").rename)
 			vim.keymap.set("v", "gra", require("vim.lsp.buf").code_action)

@@ -298,6 +298,8 @@ return {
 			},
 		})
 
-		vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
+		-- If we are using neo-tree, we don't want to use netrw
+		vim.g.loaded_netrw = 1
+		vim.g.loaded_netrwPlugin = 1
 	end,
 }

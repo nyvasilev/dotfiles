@@ -1,3 +1,6 @@
+[include]
+    path = ~/.dotfiles/git-config/gitconfig.aliases
+
 [init]
 	defaultBranch = main
 [credential]
@@ -11,15 +14,27 @@
     bare = false
     logallrefupdates = true
     precomposeunicode = true
-    pager = delta
+	pager = delta --paging=always
 [interactive]
     diffFilter = delta --color-only
 [merge]
     conflictstyle = diff3
 [diff]
     colorMoved = default
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
 [pull]
     ff = only
+[blame]
+    date = format:"%d/%m/%Y [%H:%M]"
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
 [delta]
     navigate = true
     line-numbers = true
@@ -28,3 +43,7 @@
     tabs = 4
     dark = true
     syntax-theme = gruvbox-dark
+
+
+[page]
+	log = delta

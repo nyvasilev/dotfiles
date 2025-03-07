@@ -8,12 +8,12 @@ local config = {}
 -- For example, changing the color scheme:
 config.color_scheme = "Gruvbox dark, medium (base16)"
 config.font = wezterm.font("Iosevka Nerd Font", { weight = "Bold" })
-config.window_background_opacity = 0.8
+config.window_background_opacity = 1
 config.audible_bell = "Disabled"
 config.font_size = 14.0
 config.window_decorations = "RESIZE"
 config.hide_tab_bar_if_only_one_tab = true
-config.native_macos_fullscreen_mode = false
+config.native_macos_fullscreen_mode = true
 
 -- Keybindings
 config.keys = {
