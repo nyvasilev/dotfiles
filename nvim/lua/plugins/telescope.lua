@@ -7,32 +7,17 @@ return {
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		},
 		config = function()
-			local builtin = require("telescope.builtin")
-
-			-- Key mappings for Telescope functions
-			vim.keymap.set("n", "<space>fg", require("custom.telescope.multigrep"))
-			vim.keymap.set("n", "<leader>p", builtin.find_files, {})
-			vim.keymap.set("n", "<C-g>f", builtin.git_files, {})
-			vim.keymap.set("n", "<leader>l", builtin.live_grep, {})
-			vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
-			vim.keymap.set("n", "<leader>b", builtin.buffers, {})
-			vim.keymap.set("n", "<leader>pd", builtin.diagnostics, {})
-			vim.keymap.set("n", "gri", builtin.lsp_implementations, {})
-			vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Goto Definition" })
-			vim.keymap.set("n", "grr", builtin.lsp_references, {})
-			vim.keymap.set("n", "<C-g>c", builtin.git_commits, {})
-			vim.keymap.set("n", "<C-g>bc", builtin.git_bcommits, {})
-			vim.keymap.set("v", "<leader>s", builtin.spell_suggest, {})
-			vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
-			vim.keymap.set("n", "<space>en", function()
-				builtin.find_files({
-					cwd = vim.fn.stdpath("config"),
-				})
-			end)
-
+			local harpoon_add_mark = function(prompt_bufnr)
+				local entry = require("telescope.actions.state").get_selected_entry()
+				local list = require("harpoon"):list()
+				local harpoon_config = list.config
+				local item = harpoon_config.create_list_item(harpoon_config, entry[1])
+				list:add(item)
+			end
 			require("telescope").setup({
 				defaults = {
 					layout_strategy = "bottom_pane",
+					-- layout_strategy = "vertical",
 					sorting_strategy = "ascending",
 					layout_config = {
 						height = 0.8,
@@ -40,7 +25,14 @@ return {
 						prompt_position = "top",
 						preview_width = 0.4,
 					},
-					mappings = {},
+					mappings = {
+						i = {
+							["<C-r>"] = harpoon_add_mark,
+						},
+						n = {
+							["<C-r>"] = harpoon_add_mark,
+						},
+					},
 				},
 				pickers = {
 					-- find_files = { theme = "ivy" },

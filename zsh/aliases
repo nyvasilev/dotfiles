@@ -28,3 +28,5 @@ alias zshs='source ~/.zshrc'
 
 alias kvim="NVIM_APPNAME=nvim-kickstart nvim"
 
+alias btm="btm --theme gruvbox"
+

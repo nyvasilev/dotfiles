@@ -12,7 +12,16 @@ return {
 		opts = { auto_install = true },
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "html", "cssls", "eslint", "ts_ls", "jsonls", "svelte" },
+				ensure_installed = {
+					"lua_ls",
+					"html",
+					"cssls",
+					"eslint",
+					"ts_ls",
+					"jsonls",
+					"svelte",
+					"harper_ls",
+				},
 			})
 		end,
 	},
@@ -40,6 +49,7 @@ return {
 				ts_ls = {},
 				jsonls = {},
 				svelte = {},
+				harper_ls = {},
 			},
 		},
 		config = function()
@@ -55,6 +65,37 @@ return {
 			lspconfig["emmet_ls"].setup({ capabilities = capabilities })
 			lspconfig["svelte"].setup({ capabilities = capabilities })
 
+			-- lspconfig["harper_ls"].setup({
+			-- 	capabilities = capabilities,
+			-- 	filetypes = { "html", "css", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+			-- 	settings = {
+			-- 		["harper-ls"] = {
+			-- 			userDictPath = "",
+			-- 			fileDictPath = "",
+			-- 			linters = {
+			-- 				SpellCheck = true,
+			-- 				SpelledNumbers = false,
+			-- 				AnA = true,
+			-- 				SentenceCapitalization = true,
+			-- 				UnclosedQuotes = true,
+			-- 				WrongQuotes = false,
+			-- 				LongSentences = true,
+			-- 				RepeatedWords = true,
+			-- 				Spaces = true,
+			-- 				Matcher = true,
+			-- 				CorrectNumberSuffix = true,
+			-- 			},
+			-- 			codeActions = {
+			-- 				ForceStable = true,
+			-- 			},
+			-- 			markdown = {
+			-- 				IgnoreLinkTitle = false,
+			-- 			},
+			-- 			diagnosticSeverity = "hint",
+			-- 			isolateEnglish = true,
+			-- 		},
+			-- 	},
+			-- })
 			vim.keymap.set("n", "grn", require("vim.lsp.buf").rename)
 			vim.keymap.set("v", "gra", require("vim.lsp.buf").code_action)
 			-- vim.keymap.set("n", "grr", require("vim.lsp.buf").references, {})

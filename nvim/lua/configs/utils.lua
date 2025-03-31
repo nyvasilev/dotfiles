@@ -8,3 +8,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+-- Use spelling for markdown files ‘]s’ to find next, ‘[s’ for previous, 'z=‘ for suggestions when on one.
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "html", "markdown", "text", "typescriptreact", "typescript" },
+	callback = function()
+		vim.opt_local.spell = true
+	end,
+})
+
+vim.api.nvim_create_user_command("ShowPath", function()
+	print(vim.fn.expand("%:p"))
+end, {})

@@ -10,7 +10,7 @@ require("lazy-plugins")
 -- settings options
 require("configs.options")
 
--- customo scripts
+-- custom scripts
 require("configs.utils")
 
 -- basic keymaps
