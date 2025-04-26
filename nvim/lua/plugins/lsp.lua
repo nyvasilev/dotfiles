@@ -57,7 +57,12 @@ return {
 			local lspconfig = require("lspconfig")
 
 			lspconfig["lua_ls"].setup({ capabilities = capabilities })
-			lspconfig["ts_ls"].setup({ capabilities = capabilities })
+			require("lspconfig").ts_ls.setup({
+				capabilities = capabilities,
+				on_attach = function(client)
+					client.server_capabilities.document_formatting = false
+				end,
+			})
 			lspconfig["html"].setup({ capabilities = capabilities })
 			lspconfig["cssls"].setup({ capabilities = capabilities })
 			lspconfig["eslint"].setup({ capabilities = capabilities })

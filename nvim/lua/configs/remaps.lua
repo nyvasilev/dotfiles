@@ -46,42 +46,37 @@ set("n", "<leader>k", "<cmd>lprev<CR>zz")
 
 -- plugins
 -- neo tree
--- set("n", "<C-e>", ":Neotree toggle<CR>", opts)
+set("n", "<C-e>", ":Neotree toggle<CR>", opts)
 
+-- files
+set("n", "<C-p>", "<cmd>FzfLua files<CR>")
+set("n", "<C-\\>", "<cmd>FzfLua buffers<CR>")
+set("n", "<C-g>", "<cmd>FzfLua grep<CR>")
+set("n", "<C-l>", "<cmd>FzfLua live_grep<CR>")
+set("n", "<C-k>", "<cmd>FzfLua builtin commands<CR>")
+set("n", "<C-f>", "<cmd>FzfLua grep_cword<CR>")
+-- git files
+set("n", "<C-g>l", "<cmd>FzfLua git_blame<CR>")
+set("n", "<C-g>b", "<cmd>FzfLua git_branches<CR>")
+set("n", "<C-g>c", "<cmd>FzfLua git_commits<CR>")
+set("n", "<C-g>bc", "<cmd>FzfLua git_bcommits<CR>")
+set("n", "K", vim.lsp.buf.hover, opts)
+-- lsp
+set("n", "grr", "<cmd>FzfLua lsp_references<CR>", { desc = "references for word under cursor" })
+set("n", "gd", "<cmd>FzfLua lsp_definitions<CR>")
+set("n", "gD", "<cmd>FzfLua lsp_declarations<CR>")
+set("n", "gra", "<cmd>FzfLua lsp_code_actions<CR>", { desc = "" })
+set("n", "<C-c>d", "<cmd>FzfLua diagnostics_workspace<CR>")
 set({ "v", "n" }, "grn", function()
 	vim.lsp.buf.rename()
 end, { noremap = true, silent = true, desc = "Code Rename" })
 
-local builtin = require("telescope.builtin")
+set("n", "<C-c>a", vim.lsp.buf.code_action, {})
+set("n", "<C-c>l", function()
+	vim.diagnostic.open_float(0, { scope = "line" })
+end, { desc = "Line Diagnostics" })
 
--- Key mappings for Telescope functions
-vim.keymap.set("n", "<leader>fg", require("custom.telescope.multigrep"))
-vim.keymap.set("n", "<leader>p", builtin.find_files, {})
-vim.keymap.set("n", "<C-g>f", builtin.git_files, {})
-vim.keymap.set("n", "<leader>/", builtin.live_grep, {})
-vim.keymap.set("n", "<leader>f", builtin.grep_string, {})
-vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
-vim.keymap.set("n", "<leader>b", builtin.buffers, {})
-vim.keymap.set("n", "<leader>pd", builtin.diagnostics, {})
--- vim.keymap.set("n", "gri", builtin.lsp_implementations, {})
--- vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "Goto Definition" })
-vim.keymap.set("n", "grr", builtin.lsp_references, {})
-vim.keymap.set("n", "<C-g>c", builtin.git_commits, {})
-vim.keymap.set("n", "<C-g>bc", builtin.git_bcommits, {})
-vim.keymap.set("v", "<leader>s", builtin.spell_suggest, {})
-vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
-vim.keymap.set("n", "<leader>m", builtin.marks, {})
-vim.keymap.set("n", "<leader>k", builtin.keymaps, {})
-vim.keymap.set("n", "<leader>gb", builtin.git_branches, {})
-vim.keymap.set("n", "<C-g>s", builtin.git_status, {})
-vim.keymap.set("n", "<space>en", function()
-	builtin.find_files({
-		cwd = vim.fn.stdpath("config"),
-	})
-end)
-
-set("n", "<leader>dd", ":lua vim.diagnostic.open_float() <CR>", { desc = "toggles local troubleshoot" })
-
+set("n", "<leader>gp", ":Gitsigns preview_hunk<cr>", { desc = "Git preview hunk" })
 -- open file_browser with the path of the current buffer
 set(
 	"n",

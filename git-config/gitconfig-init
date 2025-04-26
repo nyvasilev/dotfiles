@@ -47,3 +47,5 @@
 
 [page]
 	log = delta
+[alias]
+	statusbehind = "!f() { echo \"Files changed:\"; git diff --name-only HEAD...develop | sed \"s/^/  /\"; echo -e \"Commits behind: \\033[33m$(git rev-list --left-right --count HEAD...develop | awk \\x27{print \\$2}\\x27)\\033[0m\"; }; f"
