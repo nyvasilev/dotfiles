@@ -1,5 +1,22 @@
 local opt = vim.opt
 
+opt.wildmenu = true
+opt.wildmode = { "longest:full", "full" }
+-- Hide the netrw banner
+vim.g.netrw_banner = 0
+
+-- Set list style (0=thin, 1=long, 2=wide, 3=tree)
+vim.g.netrw_liststyle = 3
+
+-- Open splits to the right/bottom
+vim.g.netrw_browse_split = 4
+
+-- Open vertical splits to the right
+vim.g.netrw_altv = 1
+
+-- Sorting by time (custom sort sequence)
+vim.g.netrw_sort_sequence = [[[\/]$,*,\.bak$,\.o$,\.h$,\.info$,\.swp$,\.obj$]]
+
 opt.title = true
 opt.autoindent = true
 opt.showcmd = true
@@ -49,5 +66,4 @@ opt.list = true
 opt.foldenable = true
 opt.foldlevel = 99
 opt.foldcolumn = "1"
-vim.g.netrw_banner = 0
 vim.o.lazyredraw = true

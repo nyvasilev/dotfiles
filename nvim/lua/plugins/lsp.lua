@@ -101,11 +101,6 @@ return {
 			-- 		},
 			-- 	},
 			-- })
-			vim.keymap.set("n", "grn", require("vim.lsp.buf").rename)
-			vim.keymap.set("v", "gra", require("vim.lsp.buf").code_action)
-			-- vim.keymap.set("n", "grr", require("vim.lsp.buf").references, {})
-			-- vim.keymap.set("n", "gri", require("vim.lsp.buf").implementation, {})
-			vim.keymap.set("i", "<C-s>", require("vim.lsp.buf").signature_help)
 		end,
 	},
 }
