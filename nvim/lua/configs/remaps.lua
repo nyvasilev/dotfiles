@@ -53,16 +53,14 @@ set("n", "<leader>j", "<cmd>lnext<CR>zz")
 set("n", "<leader>k", "<cmd>lprev<CR>zz")
 
 -- plugins
--- neo tree
-set("n", "<C-e>", ":Neotree toggle<CR>", opts)
-
 -- files
 set("n", "<C-p>", "<cmd>FzfLua files<CR>")
 set("n", "<C-\\>", "<cmd>FzfLua buffers<CR>")
 set("n", "<C-g>", "<cmd>FzfLua grep<CR>")
-set("n", "<C-l>", "<cmd>FzfLua live_grep<CR>")
+set("n", "<C-l>", "<cmd>FzfLua live_grep_native<CR>")
 set("n", "<C-k>", "<cmd>FzfLua builtin commands<CR>")
 set("n", "<C-f>", "<cmd>FzfLua grep_cword<CR>")
+set("n", "<C-z>", "<cmd>FzfLua zoxide<CR>")
 
 -- git files
 set("n", "<C-g>l", "<cmd>FzfLua git_blame<CR>", { desc = "git blame buffer" })
