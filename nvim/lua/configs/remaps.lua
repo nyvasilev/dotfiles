@@ -44,6 +44,7 @@ set("n", "<C-g>b", "<cmd>FzfLua git_branches<CR>")
 set("n", "<C-g>c", "<cmd>FzfLua git_commits<CR>", { desc = "commit log project" })
 set("n", "<C-g>bc", "<cmd>FzfLua git_bcommits<CR>", { desc = "commi log buffer" })
 set("n", "<C-g>s", "<cmd>FzfLua git_status<CR>")
+set("n", "<C-g>h", "<cmd>FzfLua git_hunks<CR>")
 
 -- lsp
 set("n", "K", vim.lsp.buf.hover, opts)
@@ -55,6 +56,8 @@ set("n", "<C-c>d", "<cmd>FzfLua diagnostics_workspace<CR>")
 set({ "v", "n" }, "grn", function()
 	vim.lsp.buf.rename()
 end, { noremap = true, silent = true, desc = "Code Rename" })
+
+vim.keymap.set("i", "<C-s>", require("vim.lsp.buf").signature_help)
 
 set("n", "<C-c>l", function()
 	vim.diagnostic.open_float()

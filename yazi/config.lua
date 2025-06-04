@@ -1,20 +1,20 @@
-return {
+local M = {
 	theme = {
-		background = "dark", -- Set to "dark" or "light" based on your preference
+		background = "dark",
 		colors = {
-			file = "#ebdbb2", -- Foreground color
-			directory = "#458588", -- Blue
-			symlink = "#689d6a", -- Aqua
-			executable = "#98971a", -- Green
-			selected = "#d79921", -- Yellow
-			border = "#282828", -- Background
-			background = "#282828", -- Background
-			text = "#ebdbb2", -- Foreground color for text
-			error = "#cc241d", -- Red
+			file = "#ebdbb2",
+			directory = "#458588",
+			symlink = "#689d6a",
+			executable = "#98971a",
+			selected = "#d79921",
+			border = "#282828",
+			background = "#282828",
+			text = "#ebdbb2",
+			error = "#cc241d",
 		},
 	},
 	options = {
-		enable_icons = true, -- Use Nerd Fonts for icons
+		enable_icons = true,
 		show_hidden_files = true,
 	},
 	keymap = {
@@ -26,3 +26,25 @@ return {
 		toggle_hidden_files = ".",
 	},
 }
+
+local opener = require("opener")
+
+opener:add("*.mp4", {
+	desc = "Play with mpv",
+	block = true,
+	orphan = true,
+	run = function(path)
+		os.execute("mpv " .. string.format("%q", path))
+	end,
+})
+
+opener:add("*.mkv", {
+	desc = "Play with mpv",
+	block = true,
+	orphan = true,
+	run = function(path)
+		os.execute("mpv " .. string.format("%q", path))
+	end,
+})
+
+return M
