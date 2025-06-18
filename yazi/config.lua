@@ -18,7 +18,7 @@ local M = {
 		show_hidden_files = true,
 	},
 	keymap = {
-		quit = "q",
+		quit = "<esc>",
 		up = "k",
 		down = "j",
 		open = "l",

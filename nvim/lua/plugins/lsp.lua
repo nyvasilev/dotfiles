@@ -69,38 +69,6 @@ return {
 			lspconfig["jsonls"].setup({ capabilities = capabilities })
 			lspconfig["emmet_ls"].setup({ capabilities = capabilities })
 			lspconfig["svelte"].setup({ capabilities = capabilities })
-
-			-- lspconfig["harper_ls"].setup({
-			-- 	capabilities = capabilities,
-			-- 	filetypes = { "html", "css", "javascript", "javascriptreact", "typescript", "typescriptreact" },
-			-- 	settings = {
-			-- 		["harper-ls"] = {
-			-- 			userDictPath = "",
-			-- 			fileDictPath = "",
-			-- 			linters = {
-			-- 				SpellCheck = true,
-			-- 				SpelledNumbers = false,
-			-- 				AnA = true,
-			-- 				SentenceCapitalization = true,
-			-- 				UnclosedQuotes = true,
-			-- 				WrongQuotes = false,
-			-- 				LongSentences = true,
-			-- 				RepeatedWords = true,
-			-- 				Spaces = true,
-			-- 				Matcher = true,
-			-- 				CorrectNumberSuffix = true,
-			-- 			},
-			-- 			codeActions = {
-			-- 				ForceStable = true,
-			-- 			},
-			-- 			markdown = {
-			-- 				IgnoreLinkTitle = false,
-			-- 			},
-			-- 			diagnosticSeverity = "hint",
-			-- 			isolateEnglish = true,
-			-- 		},
-			-- 	},
-			-- })
 		end,
 	},
 }
