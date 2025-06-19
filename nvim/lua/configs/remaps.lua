@@ -30,35 +30,16 @@ set("n", "<leader>d", '"_d')
 
 -- plugins
 -- files
-
 set("n", "<C-p>", "<cmd>Telescope find_files<CR>")
 set("n", "<C-\\>", "<cmd>Telescope buffers<CR>")
 set("n", "<C-l>", "<cmd>Telescope live_grep<CR>")
 set({ "n", "v" }, "<C-f>", "<cmd>Telescope grep_string<cr>")
 
--- vim.keymap.set("v", "<C-s>", function()
--- 	local text = vim.fn.getreg("v")
--- 	require("telescope.builtin").grep_string({ search = text })
--- end, { desc = "Grep selected text" })
-
--- set("n", "<C-s>", "<cmd>Telescope spell_suggest<CR>")
--- set("n", "<C-p>", "<cmd>FzfLua files<CR>")
--- set("n", "<C-g>", "<cmd>FzfLua grep<CR>")
--- set("n", "<C-l>", "<cmd>FzfLua live_grep_native<CR>")
--- set("n", "<C-k>", "<cmd>FzfLua builtin commands<CR>")
--- set("n", "<C-f>", "<cmd>FzfLua grep_cword<CR>")
--- set("n", "<C-z>", "<cmd>FzfLua zoxide<CR>")
-
 -- git files
 set("n", "<C-g>c", "<cmd>Telescope git_commits<CR>", { desc = "git commits" })
 set("n", "<C-g>bc", "<cmd>Telescope git_bcommits<CR>")
 set("n", "<C-g>s", "<cmd>Telescope git_status<CR>")
--- set("n", "<C-g>l", "<cmd>FzfLua git_blame<CR>", { desc = "git blame buffer" })
--- set("n", "<C-g>b", "<cmd>FzfLua git_branches<CR>")
--- set("n", "<C-g>c", "<cmd>FzfLua git_commits<CR>", { desc = "commit log project" })
--- set("n", "<C-g>bc", "<cmd>FzfLua git_bcommits<CR>", { desc = "commi log buffer" })
--- set("n", "<C-g>s", "<cmd>FzfLua git_status<CR>")
--- set("n", "<C-g>h", "<cmd>FzfLua git_hunks<CR>")
+set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
 
 -- lsp
 set("n", "K", vim.lsp.buf.hover, opts)
@@ -66,11 +47,6 @@ set("n", "grr", "<cmd>Telescope lsp_references<CR>")
 set("n", "gd", "<cmd>Telescope lsp_definitions<CR>")
 set("n", "gD", "<cmd>Telescope lsp_implementations<CR>")
 set("n", "<C-c>d", "<cmd>Telescope diagnostics<CR>")
--- set("n", "grr", "<cmd>FzfLua lsp_references<CR>", { desc = "references for word under cursor" })
--- set("n", "gd", "<cmd>FzfLua lsp_definitions<CR>")
--- set("n", "gD", "<cmd>FzfLua lsp_declarations<CR>")
--- set("n", "gra", "<cmd>FzfLua lsp_code_actions<CR>")
--- set("n", "<C-c>d", "<cmd>FzfLua diagnostics_workspace<CR>")
 set({ "v", "n" }, "grn", function()
 	vim.lsp.buf.rename()
 end, { noremap = true, silent = true, desc = "Code Rename" })

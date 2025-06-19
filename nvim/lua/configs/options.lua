@@ -2,29 +2,13 @@ local opt = vim.opt
 
 opt.wildmenu = true
 opt.wildmode = { "longest:full", "full" }
--- Hide the netrw banner
-vim.g.netrw_banner = 0
-
--- Set list style (0=thin, 1=long, 2=wide, 3=tree)
-vim.g.netrw_liststyle = 3
-
--- Open splits to the right/bottom
-vim.g.netrw_browse_split = 4
-
--- Open vertical splits to the right
-vim.g.netrw_altv = 1
-
--- Sorting by time (custom sort sequence)
-vim.g.netrw_sort_sequence = [[[\/]$,*,\.bak$,\.o$,\.h$,\.info$,\.swp$,\.obj$]]
 
 opt.title = true
 opt.autoindent = true
 opt.showcmd = true
-opt.ai = true -- autoident
-opt.si = true -- smartindent
+opt.ai = true
+opt.si = true
 opt.backspace = "start,eol,indent"
-opt.path:append({ "**" }) -- Finding files - Search down into subfolders
-opt.wildignore:append({ "*/node_modules/*" })
 opt.winblend = 0
 opt.wildoptions = "pum"
 opt.pumblend = 5
@@ -56,6 +40,7 @@ opt.smartcase = true
 opt.timeoutlen = 300
 opt.completeopt = { "menu", "menuone", "noselect" }
 opt.laststatus = 0
+
 -- ui
 opt.showmatch = true
 opt.shortmess:append("sI")
