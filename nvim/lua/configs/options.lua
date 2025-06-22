@@ -32,7 +32,7 @@ opt.termguicolors = true
 opt.scrolloff = 20
 opt.signcolumn = "yes"
 opt.updatetime = 50
-opt.mouse = "a"
+opt.mouse = ""
 opt.clipboard = "unnamedplus"
 opt.breakindent = true
 opt.ignorecase = true
@@ -43,12 +43,13 @@ opt.laststatus = 0
 
 -- ui
 opt.showmatch = true
-opt.shortmess:append("sI")
+-- opt.shortmess:append("sI")
 opt.cmdheight = 1
-opt.signcolumn = "auto:2"
+-- opt.signcolumn = "auto:2"
 opt.synmaxcol = 512
 opt.list = true
-opt.foldenable = true
-opt.foldlevel = 99
-opt.foldcolumn = "1"
-vim.o.lazyredraw = true
+vim.o.foldcolumn = "1"
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+vim.o.fillchars = [[eob: ,fold: ,foldopen:▼,foldsep: ,foldclose:►]]

@@ -65,3 +65,7 @@ set("n", "<esc>", function()
 	close_floating()
 	vim.cmd(":noh")
 end, { silent = true, desc = "Remove Search Highlighting, Dismiss Popups" })
+
+set("n", "zU", "<cmd>lua require('ufo').openAllFolds()<CR>", { desc = "Open all folds" })
+set("n", "zu", "<cmd>lua require('ufo').closeAllFolds()<CR>", { desc = "Close all folds" })
+set("n", "zp", "<cmd>lua require('ufo').peekFoldedLinesUnderCursor()<CR>", { desc = "Peek fold under cursor" })
