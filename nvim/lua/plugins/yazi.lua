@@ -16,7 +16,7 @@ return {
 		},
 		{
 			-- Open in the current working directory
-			"<leader>",
+			"<leader>f",
 			"<cmd>Yazi cwd<cr>",
 			desc = "Open the file manager in nvim's working directory",
 		},
@@ -26,7 +26,6 @@ return {
 			desc = "Resume the last yazi session",
 		},
 	},
-	---@type YaziConfig | {}
 	opts = {
 		-- if you want to open yazi instead of netrw, see below for more info
 		open_for_directories = true,
