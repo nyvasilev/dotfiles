@@ -16,7 +16,6 @@ return {
 		require("telescope").setup({
 			defaults = {
 				layout_strategy = "bottom_pane",
-				-- layout_strategy = "vertical",
 				sorting_strategy = "ascending",
 				layout_config = {
 					height = 0.8,
@@ -33,27 +32,15 @@ return {
 					},
 				},
 			},
-			pickers = {
-				-- find_files = { theme = "ivy" },
-				-- git_files = { theme = "ivy" },
-				-- live_grep = { theme = "ivy" },
-				-- help_tags = { theme = "ivy" },
-				-- buffers = { theme = "ivy" },
-				-- lsp_definitions = { theme = "ivy" },
-				-- lsp_references = { theme = "ivy" },
-				-- git_commits = { theme = "ivy" },
-				-- git_bcommits = { theme = "ivy" },
-			},
+			pickers = {},
 			extensions = {
 				fzf = {
-					fuzzy = true, -- false will only do exact matching
-					override_generic_sorter = true, -- override the generic sorter
-					override_file_sorter = true, -- override the file sorter
+					fuzzy = true,
+					override_generic_sorter = true,
+					override_file_sorter = true,
 				},
 			},
 		})
-		-- To get fzf loaded and working with telescope, you need to call
-		-- load_extension, somewhere after setup function:
 		require("telescope").load_extension("fzf")
 	end,
 }
